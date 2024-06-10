@@ -1,29 +1,26 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing:border-box;
+.box {
+    width: 400px;
+    height: 400px;
+
+    margin: 20px;
+    text-align: center;
+    line-height: 100px;
 }
 
-body{
-    height: 100vh;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background: pink;
+
+
+#dropBox {
+    background-color: #ffc;
+    width: 90%;
+  
 }
 
-.container{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-width:420px;
-justify-content: center;
+.draggable{
+    background-color: red;
+
 }
 
-.music1 img{padding: 10px 10px; border: 1px solid #0252ff; border-radius: 2px 2px; height: 70px;width: 70px;}
-.music2 img{padding: 10px 10px; border: 1px solid #0252ff; border-radius: 2px 2px; height: 70px;width: 70px;}
-.music3 img{padding: 10px 10px; border: 1px solid #0252ff; border-radius: 2px 2px; height: 70px;width: 70px;}
-.music4 img{padding: 10px 10px; border: 1px solid #0252ff; border-radius: 2px 2px; height: 70px;width: 70px;}
-.music5 img{padding: 10px 10px; border: 1px solid #0252ff; border-radius: 2px 2px; height: 70px;width: 70px;}
-
-.dropToPlay{padding: 10px 10px; border: 1px solid #0252ff; border-radius: 2px 2px; height: 70px;width: 70px;}
+.dragBox img{
+    width: 250px;
+    height: 250px;
+}

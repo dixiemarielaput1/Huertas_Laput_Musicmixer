@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Mixer</title>
-    <link rel="stylesheet" href="main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop with Audio</title>
+<link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="main.css">
 </head>
 <body>
-
-    <audio src="audio/bass.mp3"></audio>  
-    <audio src="audio/drum.mp3"></audio>
-    <audio src="audio/guitar.mp3"></audio>
-    <audio src="audio/harp.mp3"></audio>
-    <audio src="audio/piano.mp3"></audio>
-
-    <div class="draggedInstruments">
-        <div class="music1" draggable data-target="music"><img src="music.svg" alt="music starts"></div>
-        <div class="music2" draggable data-target="music"><img src="music.svg" alt="music starts"></div>
-        <div class="music3" draggable data-target="music"><img src="music.svg" alt="music starts"></div>
-        <div class="music4" draggable data-target="music"><img src="music.svg" alt="music starts"></div>
-        <div class="music5" draggable data-target="music"><img src="music.svg" alt="music starts"></div>
+    <div class="container">
+    <div id="dragBox" class="box" draggable="true">
+        <img class="draggable" src="images/bass.png" alt="Image 1">
+        <img class="draggable" src="images/drum.png" alt="Image 2">
+        <img class="draggable" src="images/guitar.png" alt="Image 3">
+        <img class="draggable" src="images/harp.png" alt="Image 4">
+        <img class="draggable" src="images/piano.png" alt="Image 5">
+    </div>
+    <div id="dropBox" class="box">
+        Drop here
     </div>
 
-    <div class="dropArea">
-        <div class="dropToPlay">Drag Here</div>
-        <div class="dropToPlay">Drag Here</div>
-        <div class="dropToPlay">Drag Here</div>
-        <div class="dropToPlay">Drag Here</div> 
-        <div class="dropToPlay">Drag Here</div>
+    <audio class="sound" src="audio/bass.mp3"></audio>
+    <audio class="sound" src="audio/drum.mp3"></audio>
+    <audio class="sound" src="audio/guitar.mp3"></audio>
+    <audio class="sound" src="audio/harp.mp3"></audio>
+    <audio class="sound" src="audio/piano.mp3"></audio>
+
     </div>
 
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
