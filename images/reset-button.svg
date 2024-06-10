@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.17 37.75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Control_room" data-name="Control room">
+    <g id="Reset_button" data-name="Reset button">
+      <path class="cls-1" d="M16.12,6.08c8.53.02,15.54,7.05,15.54,15.58s-7.03,15.58-15.58,15.58S.5,30.22.5,21.67h6.3c0,5.13,4.16,9.28,9.29,9.28s9.29-4.16,9.29-9.29-4.15-9.27-9.26-9.29"/>
+      <polyline class="cls-1" points="16.08 11.85 16.08 17.28 5.4 9.15 16.08 1.01 16.08 6.6"/>
+    </g>
+  </g>
+</svg>
