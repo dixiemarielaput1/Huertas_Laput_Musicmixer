@@ -1,52 +1,68 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const dragArea = document.getElementById("dragArea");
+    const dropArea = document.getElementById("dropArea");
+    const musicLists = document.querySelectorAll(".music-instrument");
+    const draggableImages = document.querySelectorAll(".draggable");
 
+    let dropImage = {}; // Use an object to store dropped images
 
-const dragBox = document.getElementById("dragBox");
-const dropBox = document.getElementById("dropBox");
-const audioElements = document.querySelectorAll(".sound");
-const draggableImages = document.querySelectorAll(".draggable");
+    // Call Function.
+    initializeDragStart();
+    initializeDragOver();
+    initializeDropOver();
 
-const droppedImages = [];
+    // Function: Initialize For Dragstart, Dragover, Dropover
+    function initializeDragStart() {
+        console.log('Initializing drag and drop...');
+        draggableImages.forEach(image => {
+            image.addEventListener("dragstart", handleStartDrag);
+        });
+    }
 
+    function initializeDragOver() {
+        console.log('Initializing Drag Over');
+        dropArea.addEventListener("dragover", handleOver);
+    }
 
-initializeDragAndDrop();
-function initializeDragAndDrop() {
-    draggableImages.forEach(image => {
-        image.addEventListener("dragstart", dragStart);
-    });
+    function initializeDropOver() {
+        console.log('Initializing Drop Over');
+        dropArea.addEventListener("drop", handleDrop);
+    }
 
-    dropBox.addEventListener("dragover", dragOver);
-    dropBox.addEventListener("drop", drop);
-}
-
-function dragStart(event) {
-    const index = Array.from(draggableImages).indexOf(this);
-    if (index >= 0 && index < audioElements.length) {
-        if (droppedImages.indexOf(this.src) === -1) {
-            audioElements[index].play();
-            event.dataTransfer.setData("text/plain", this.src);
+    // Function: Handle Dragstart, Dragover, Dropover
+    function handleStartDrag(e) {
+        console.log(`Started Dragging ${this}`);
+        const counter = Array.from(draggableImages).indexOf(this);
+        if (counter >= 0 && counter < musicLists.length) {
+            if (!dropImage[this.src]) { 
+                musicLists[counter].play();
+                e.dataTransfer.setData("text/plain", this.src);
+            }
         }
     }
-}
 
-function dragOver(event) {
-    event.preventDefault();
+    function handleOver(e) {
+        console.log('Dragged Over');
+        e.preventDefault();
+    }
 
-    console.log('Dragging the mouse'); 
-}
-
-function drop(event) {
-    event.preventDefault();
-    const data = event.dataTransfer.getData("text/plain");
-    console.log('Dropped the icon!');
-    if (droppedImages.indexOf(data) === -1) {
-        console.log('Dropped an item'); 
-        const draggedImage = document.createElement("img");
-        draggedImage.src = data;
-        event.target.appendChild(draggedImage);
-        droppedImages.push(data);
-        const originalImage = document.querySelector(".draggable[src='" + data + "']");
-        if (originalImage) {
-            originalImage.style.display = "none";
+    function handleDrop(e) {
+        console.log('Dropped Over.');
+        e.preventDefault();
+        const data = e.dataTransfer.getData("text/plain");
+    
+        if (!dropImage[data]) {
+            const draggedImage = document.createElement("img");
+            draggedImage.src = data;
+            dropArea.appendChild(draggedImage);
+            dropImage[data] = true;
+    
+            const initialImage = document.querySelector(`.draggable[src='${data}']`);
+            if (initialImage) {
+                initialImage.style.display = "none";
+            }     
+        } else {
+            console.log('Music is already placed.', data);
         }
     }
-}
+});

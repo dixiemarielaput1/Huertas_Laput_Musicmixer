@@ -8,26 +8,30 @@
 <link rel="stylesheet" href="main.css">
 </head>
 <body>
+
+ 
     <div class="container">
-    <div id="dragBox" class="box" draggable="true">
-        <img class="draggable" src="images/bass.png" alt="Image 1">
-        <img class="draggable" src="images/drum.png" alt="Image 2">
-        <img class="draggable" src="images/guitar.png" alt="Image 3">
-        <img class="draggable" src="images/harp.png" alt="Image 4">
-        <img class="draggable" src="images/piano.png" alt="Image 5">
-    </div>
-    <div id="dropBox" class="box">
-        Drop here
-    </div>
+        <div id="dragArea" class="box imagesBox" draggable="true">
+            <img class="draggable" src="images/1_bassguitar.svg" draggable="true" alt="Bass Guitar">
+            <img class="draggable" src="images/1_drums.svg" draggable="true" alt="Drum">
+            <img class="draggable" src="images/1_elecricguitar.svg" draggable="true" alt="Electric Guitar">
+            <img class="draggable" src="images/1_mic.svg" draggable="true" alt="Mic">
+            <img class="draggable" src="images/1_piano.svg" draggable="true" alt="Piano">
+            <img class="draggable" src="images/1_synth.svg" draggable="true" alt="Synth">
+        </div>
+        <div id="dropArea" class="box">
+            
+        </div>
 
-    <audio class="sound" src="audio/bass.mp3"></audio>
-    <audio class="sound" src="audio/drum.mp3"></audio>
-    <audio class="sound" src="audio/guitar.mp3"></audio>
-    <audio class="sound" src="audio/harp.mp3"></audio>
-    <audio class="sound" src="audio/piano.mp3"></audio>
 
-    </div>
+        <audio class="music-instrument" src="audio/bassguitar.mp3"></audio>
+        <audio class="music-instrument" src="audio/drums.mp3"></audio>
+        <audio class="music-instrument" src="audio/electricguitar.mp3"></audio>
+        <audio class="music-instrument" src="audio/mic.mp3"></audio>
+        <audio class="music-instrument" src="audio/piano.mp3"></audio>
+        <audio class="music-instrument" src="audio/synth.mp3"></audio>
+        </div>
 
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
