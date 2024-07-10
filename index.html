@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drag and Drop with Audio</title>
-<link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KGgo=">
-<link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Music Mixer</title>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <header id="headLine">
+        <h1>Music Mixer</h1>
+        <p>Tanya Huertas and Dixie Laput</p>
+    </header>
 
- 
-    <div class="container">
-        <div id="dragArea" class="box imagesBox" draggable="true">
-            <img class="draggable" src="images/1_bassguitar.svg" draggable="true" alt="Bass Guitar">
-            <img class="draggable" src="images/1_drums.svg" draggable="true" alt="Drum">
-            <img class="draggable" src="images/1_elecricguitar.svg" draggable="true" alt="Electric Guitar">
-            <img class="draggable" src="images/1_mic.svg" draggable="true" alt="Mic">
-            <img class="draggable" src="images/1_piano.svg" draggable="true" alt="Piano">
-            <img class="draggable" src="images/1_synth.svg" draggable="true" alt="Synth">
-        </div>
-        <div id="dropArea" class="box">
-            
-        </div>
-
-
-        <audio class="music-instrument" src="audio/bassguitar.mp3"></audio>
-        <audio class="music-instrument" src="audio/drums.mp3"></audio>
-        <audio class="music-instrument" src="audio/electricguitar.mp3"></audio>
-        <audio class="music-instrument" src="audio/mic.mp3"></audio>
-        <audio class="music-instrument" src="audio/piano.mp3"></audio>
-        <audio class="music-instrument" src="audio/synth.mp3"></audio>
+    <section id="studio-container">
+        <div class="music-instruments">
+            <img src="images/1_bassguitar.svg" id="bassGuitarImg" class="instrument-image" alt="Bass Guitar">
+            <img src="images/1_drums.svg" id="drumsImg" class="instrument-image" alt="Drums">
+            <img src="images/1_elecricguitar.svg" id="electricGuitarImg" class="instrument-image" alt="Electric Guitar">
+            <img src="images/1_mic.svg" id="micImg" class="instrument-image" alt="Microphone">
+            <img src="images/1_piano.svg" id="pianoImg" class="instrument-image" alt="Piano">
+            <img src="images/1_synth.svg" id="synthImg" class="instrument-image" alt="Synthesizer">
         </div>
 
-    <script src="main.js"></script>
+        <div class="drop-box-container">
+            <div class="drop-zone" id="box1"></div>
+            <div class="drop-zone" id="box2"></div>
+            <div class="drop-zone" id="box3"></div>
+            <div class="drop-zone" id="box4"></div>
+            <div class="drop-zone" id="box5"></div>
+            <div class="drop-zone" id="box6"></div>
+        </div>
+    </section>
+
+    <div id="audio-list">
+        <audio id="audio1" src="audio/bassguitar.mp3" controls></audio>
+        <audio id="audio2" src="audio/drums.mp3" controls></audio>
+        <audio id="audio3" src="audio/electricguitar.mp3" controls></audio>
+        <audio id="audio4" src="audio/mic.mp3" controls></audio>
+        <audio id="audio5" src="audio/piano.mp3" controls></audio>
+        <audio id="audio6" src="audio/synth.mp3" controls></audio>
+    </div>
+
+    <section id="audio-controller">
+        <img id="playButton" src="images/2_play.png" alt="Play Button">
+        <img id="pauseButton" src="images/2_pause.png" alt="Pause Button">
+        <img id="restartButton" src="images/2_reset.png" alt="Restart Button">
+    </section>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

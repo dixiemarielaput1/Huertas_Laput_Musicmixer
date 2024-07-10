@@ -1,68 +1,80 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const dragArea = document.getElementById("dragArea");
-    const dropArea = document.getElementById("dropArea");
-    const musicLists = document.querySelectorAll(".music-instrument");
-    const draggableImages = document.querySelectorAll(".draggable");
+console.log("JavaScript is connected");
 
-    let dropImage = {}; // Use an object to store dropped images
+// Variables and Selectors
+const musicInstruments = document.querySelectorAll('.instrument-image'),
+dropZones = document.querySelectorAll('.drop-zone'),
+playButton = document.querySelector('#playButton'),
+pauseButton = document.querySelector('#pauseButton'),
+restartButton = document.querySelector('#restartButton');
+const audioElements = {
+    bassGuitarImg: document.querySelector('#audio1'),
+    drumsImg: document.querySelector('#audio2'),
+    electricGuitarImg: document.querySelector('#audio3'),
+    micImg: document.querySelector('#audio4'),
+    pianoImg: document.querySelector('#audio5'),
+    synthImg: document.querySelector('#audio6')
+};
+let draggedInstrument = null;
 
-    // Call Function.
-    initializeDragStart();
-    initializeDragOver();
-    initializeDropOver();
+function buttonPlay(){
+    playAudio('bassGuitarImg');
+}
 
-    // Function: Initialize For Dragstart, Dragover, Dropover
-    function initializeDragStart() {
-        console.log('Initializing drag and drop...');
-        draggableImages.forEach(image => {
-            image.addEventListener("dragstart", handleStartDrag);
-        });
+function buttonPause(){
+    pauseAudio('bassGuitarImg');
+    pauseAudio('drumsImg');
+    pauseAudio('electricGuitarImg');
+    pauseAudio('micImg');
+    pauseAudio('pianoImg');
+    pauseAudio('synthImg');
+}
+// Function to play audio based on instrument ID
+function playAudio(instrumentId) {
+    if (audioElements[instrumentId]) {
+        const audio = audioElements[instrumentId];
+        audio.currentTime = 0;
+        audio.play();
+    }
+}
+
+function pauseAudio(instrumentId) {
+    if (audioElements[instrumentId]) {
+        const audio = audioElements[instrumentId];
+        audio.currentTime = 0;
+        audio.pause();
+}}
+
+//Functions
+
+function handleStartDrag(){
+    draggedInstrument = this;
+    console.log(`Started dragging ${draggedInstrument.alt}`);
+}
+
+function handleOver(e){
+    e.preventDefault();
+    console.log("Dragged Over");
+}
+
+function handleDrop(e) {
+    e.preventDefault();
+    if (!this.querySelector('img')) {
+        this.appendChild(draggedInstrument);
+        console.log(`Instrument '${draggedInstrument.alt}' dropped into '${this.id}'`);
+        
+        // Play audio corresponding to the dropped instrument
+        playAudio(draggedInstrument.id);
+    } else {
+        console.log('Zone is already occupied');
+    }
     }
 
-    function initializeDragOver() {
-        console.log('Initializing Drag Over');
-        dropArea.addEventListener("dragover", handleOver);
-    }
+//Event Listeners
 
-    function initializeDropOver() {
-        console.log('Initializing Drop Over');
-        dropArea.addEventListener("drop", handleDrop);
-    }
+musicInstruments.forEach(instrument => instrument.addEventListener("dragstart", handleStartDrag));
+dropZones.forEach(zone => zone.addEventListener("dragover", handleOver));
+dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
+playButton.addEventListener('click', buttonPlay);
+pauseButton.addEventListener('click', buttonPause);
+restartButton.addEventListener("click", function() {history.go(0);});
 
-    // Function: Handle Dragstart, Dragover, Dropover
-    function handleStartDrag(e) {
-        console.log(`Started Dragging ${this}`);
-        const counter = Array.from(draggableImages).indexOf(this);
-        if (counter >= 0 && counter < musicLists.length) {
-            if (!dropImage[this.src]) { 
-                musicLists[counter].play();
-                e.dataTransfer.setData("text/plain", this.src);
-            }
-        }
-    }
-
-    function handleOver(e) {
-        console.log('Dragged Over');
-        e.preventDefault();
-    }
-
-    function handleDrop(e) {
-        console.log('Dropped Over.');
-        e.preventDefault();
-        const data = e.dataTransfer.getData("text/plain");
-    
-        if (!dropImage[data]) {
-            const draggedImage = document.createElement("img");
-            draggedImage.src = data;
-            dropArea.appendChild(draggedImage);
-            dropImage[data] = true;
-    
-            const initialImage = document.querySelector(`.draggable[src='${data}']`);
-            if (initialImage) {
-                initialImage.style.display = "none";
-            }     
-        } else {
-            console.log('Music is already placed.', data);
-        }
-    }
-});

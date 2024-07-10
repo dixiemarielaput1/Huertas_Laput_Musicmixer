@@ -1,63 +1,77 @@
-body, html {
-    margin: 0;
-    padding: 0;
+@charset "utf-8";
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    border: 0;
+    background-color: #333;
+    color: #FFF;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 16px;
 }
 
-.imagesBox {
-    width: 1400px;
-    height: 800px;
+.drop-box-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(images/rec-room-bg.png);
-    background-position-x: 45%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: relative;
+    
+    justify-content: center; /* Adjust spacing between items */
+    margin: 20px 0; /* Added margin to the container */
 }
 
-#dropArea {
+.drop-zone {
+    width: 180px;
+    height: 180px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid gray;
+    margin: 5px; /* Adjusted margin to make items closer */
+    padding:10px 10px;
+}
+
+
+.music-instruments {
     position: absolute;
-    top: 66%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    z-index: 1;
-    width: 500px;
+    z-index: 1; /* Ensure .music-instruments appear above the background */
+}
+
+.music-instruments img {
+    width: 150px;
     height: 150px;
     padding: 10px;
+    
+}
+
+.drop-zone img{
+    height: 150px;
+    width: 150px;
+}
+
+#audio-list{
+    display: none;
+}
+
+#headLine{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+}
+
+#audio-controller img{
+    width: 90px;
+    height: 90px;
+}
+
+#audio-controller{
     display: flex;
+    margin-top: 280px;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    overflow: hidden;
-}
-
-#dropArea img {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    border-radius: 1px solid black;
-}
-
-#dropArea h1 {
-    font-size: 18px;
-    margin: 0;
-}
-
-.draggable {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
 }
