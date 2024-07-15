@@ -6,24 +6,12 @@
     <title>Drag and Drop Music Mixer</title>
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/grid.css" rel="stylesheet ">
 </head>
 <body>
-    <header id="headLine">
-        <h1>Music Mixer</h1>
-        <p>Tanya Huertas and Dixie Laput</p>
-    </header>
+    <section class="grid-con" id="studio-container">
 
-    <section id="studio-container">
-        <div class="music-instruments">
-            <img src="images/1_bassguitar.svg" id="bassGuitarImg" class="instrument-image" alt="Bass Guitar">
-            <img src="images/1_drums.svg" id="drumsImg" class="instrument-image" alt="Drums">
-            <img src="images/1_elecricguitar.svg" id="electricGuitarImg" class="instrument-image" alt="Electric Guitar">
-            <img src="images/1_mic.svg" id="micImg" class="instrument-image" alt="Microphone">
-            <img src="images/1_piano.svg" id="pianoImg" class="instrument-image" alt="Piano">
-            <img src="images/1_synth.svg" id="synthImg" class="instrument-image" alt="Synthesizer">
-        </div>
-
-        <div class="drop-box-container">
+        <div class="drop-box-container l-col-start-5 l-col-end-10">
             <div class="drop-zone" id="box1"></div>
             <div class="drop-zone" id="box2"></div>
             <div class="drop-zone" id="box3"></div>
@@ -32,6 +20,29 @@
             <div class="drop-zone" id="box6"></div>
         </div>
     </section>
+
+    <section id="studio-instruments">
+        <div class="music-instruments">
+            <div class="instrument" id="bassGuitar">
+                <img src="images/1_bassguitar.svg" alt="Bass Guitar">
+            </div>
+            <div class="instrument" id="drums">
+                <img src="images/1_drums.svg" alt="Drums">
+            </div>
+            <div class="instrument" id="electricGuitar">
+                <img src="images/1_elecricguitar.svg" alt="Electric Guitar">
+            </div>
+            <div class="instrument" id="microphone">
+                <img src="images/1_mic.svg" alt="Microphone">
+            </div>
+            <div class="instrument" id="piano">
+                <img src="images/1_piano.svg" alt="Piano">
+            </div>
+            <div class="instrument" id="synthesizer">
+                <img src="images/1_synth.svg" alt="Synthesizer">
+            </div>
+        </div>
+    </section>    
 
     <div id="audio-list">
         <audio id="audio1" src="audio/bassguitar.mp3" controls></audio>
@@ -43,9 +54,9 @@
     </div>
 
     <section id="audio-controller">
-        <img id="playButton" src="images/2_play.png" alt="Play Button">
-        <img id="pauseButton" src="images/2_pause.png" alt="Pause Button">
-        <img id="restartButton" src="images/2_reset.png" alt="Restart Button">
+        <img id="playButton" src="images/play-button.svg" alt="Play Button">
+        <img id="pauseButton" src="images/pause-button.svg" alt="Pause Button">
+        <img id="restartButton" src="images/reset-button.svg" alt="Restart Button">
     </section>
 
     <script src="js/main.js"></script>

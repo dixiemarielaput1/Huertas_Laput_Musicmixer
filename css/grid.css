@@ -1,0 +1,46 @@
+html {
+    box-sizing: border-box; 
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit; 
+  }
+
+  .grid-con {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr)); /* Ensure it applies to all screen sizes */
+}
+
+@media screen and (min-width: 1200px){
+  .grid-con {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+  }
+    .l-col-start-1 {grid-column-start: 1;}
+    .l-col-start-2 {grid-column-start: 2;}
+    .l-col-start-3 {grid-column-start: 3;}
+    .l-col-start-4 {grid-column-start: 4;}
+    .l-col-start-5 {grid-column-start: 5;}
+    .l-col-start-6 {grid-column-start: 6;}
+    .l-col-start-7 {grid-column-start: 7;}
+    .l-col-start-8 {grid-column-start: 8;}
+    .l-col-start-9 {grid-column-start: 9;}
+    .l-col-start-10 {grid-column-start: 10;}
+    .l-col-start-11 {grid-column-start: 11;}
+    .l-col-start-12 {grid-column-start: 12;}
+    
+    .l-col-end-1 { grid-column-end: 1;}
+    .l-col-end-2 { grid-column-end: 2;}
+    .l-col-end-3 { grid-column-end: 3;}
+    .l-col-end-4 { grid-column-end: 4;}
+    .l-col-end-5 { grid-column-end: 5;}
+    .l-col-end-6 { grid-column-end: 6;}
+    .l-col-end-7 { grid-column-end: 7;}
+    .l-col-end-8 { grid-column-end: 8;}
+    .l-col-end-9 { grid-column-end: 9;}
+    .l-col-end-10 { grid-column-end: 10;}
+    .l-col-end-11 { grid-column-end: 11;}
+    .l-col-end-12 { grid-column-end: 12;}
+    .l-col-end-13 { grid-column-end: 13;}
+    
+    .show-element {display: grid;}  
+}
