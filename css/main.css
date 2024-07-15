@@ -9,42 +9,51 @@ html {
 }
 
 body {
-    margin: 0;
+    margin-top: 70px;
     border: 0;
-    background-color: #333;
+    background-image: url(/images/rec-room-bg.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 50px;
     color: #FFF;
     font-family: 'Luckiest Guy', sans-serif;
     font-size: 16px;
 }
 
 .drop-box-container {
-    display: flex;
-    
-    justify-content: center; /* Adjust spacing between items */
-    margin: 20px 0; /* Added margin to the container */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    justify-content: center;
+    align-items: center;
+    margin-top: 55px auto 0 auto;
+    padding: 5px;
+    max-height: 100px;
+    background-color: rgba(232, 232, 232, 0.9);
+    border-radius: 7px;
 }
 
 .drop-zone {
-    width: 180px;
-    height: 180px;
+    width: 80px;
+    height: 80px;
     background-color: rgb(255, 255, 255);
     border: 1px solid gray;
-    margin: 5px; /* Adjusted margin to make items closer */
+    margin: 5px;
     padding:10px 10px;
+    border-radius: 7px;
 }
 
 
 .music-instruments {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure .music-instruments appear above the background */
+    position: relative;
+    width: 100%; /* Ensure the container is full width */
+    height: 100%; /* Ensure the container is full height */
+    z-index: 1;
 }
 
 .music-instruments img {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     padding: 10px;
     
 }
@@ -59,19 +68,75 @@ body {
 }
 
 #headLine{
-    text-align: center;
+    text-align: left;
     margin-top: 80px;
     margin-bottom: 40px;
+    color: black;
 
 }
 
 #audio-controller img{
-    width: 90px;
-    height: 90px;
+    width: 30px;
+    height: 30px;
 }
 
 #audio-controller{
     display: flex;
-    margin-top: 280px;
+    position: absolute;
+    margin-top: 50px;
     justify-content: center;
+    top: 59%;
+    left: 52.3%;
+}
+
+#studio-instruments {
+    display: flex;
+    height: 300px;
+    width: 600px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red; /* For debugging */
+}
+
+/*instruments placement*/
+.instrument{
+    position: absolute;
+}
+
+#bassGuitar {
+    position: absolute;
+    top: 37%;
+    right: 33%;
+}
+
+#drums {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+}
+
+#electricGuitar {
+    position: absolute;
+    top: 37%;
+    left: 31%;
+    z-index: 1;
+}
+
+#microphone {
+    position: absolute;
+    top: 27%;
+    left: 57%;
+}
+
+#piano {
+    position: absolute;
+    top: 37%;
+    left: 27%;
+}
+
+#synthesizer {
+    position: absolute;
+    top: 45%;
+    right: 1.5%;
 }
