@@ -4,60 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag and Drop Music Mixer</title>
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/grid.css" rel="stylesheet ">
+    <link href="css/grid.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <section class="grid-con" id="studio-container">
+    <header id="headLine">
+        <h1>Music Mixer</h1>
+        <p>Tanya Huertas and Dixie Laput</p>
+    </header>
 
-        <div class="drop-box-container l-col-start-5 l-col-end-10">
-            <div class="drop-zone" id="box1"></div>
-            <div class="drop-zone" id="box2"></div>
-            <div class="drop-zone" id="box3"></div>
-            <div class="drop-zone" id="box4"></div>
-            <div class="drop-zone" id="box5"></div>
-            <div class="drop-zone" id="box6"></div>
-        </div>
-    </section>
-
-    <section id="studio-instruments">
-        <div class="music-instruments">
-            <div class="instrument" id="bassGuitar">
-                <img src="images/bass_guitar.svg" alt="Bass Guitar">
-            </div>
-            <div class="instrument" id="drums"> 
-                <img src="images/drums.svg" alt="Drums">
-            </div>
-            <div class="instrument" id="electricGuitar">
-                <img src="images/electric_guitar.svg" alt="Electric Guitar">
-            </div>
-            <div class="instrument" id="microphone">
-                <img src="images/mic.svg" alt="Microphone">
-            </div>
-            <div class="instrument" id="piano">
-                <img src="images/piano.svg" alt="Piano">
-            </div>
-            <div class="instrument" id="synthesizer">
-                <img src="images/synth.svg" alt="Synthesizer">
-            </div>
-        </div>
-    </section>    
-
-    <div id="audio-list">
-        <audio id="audio1" src="audio/bassguitar.mp3" controls></audio>
-        <audio id="audio2" src="audio/drums.mp3" controls></audio>
-        <audio id="audio3" src="audio/electricguitar.mp3" controls></audio>
-        <audio id="audio4" src="audio/mic.mp3" controls></audio>
-        <audio id="audio5" src="audio/piano.mp3" controls></audio>
-        <audio id="audio6" src="audio/synth.mp3" controls></audio>
+    <div class="room-studio grid-con">
+        <img src="images/rec-room-bg.png" alt="" class="m-col-span-12 col-span-full">
     </div>
 
-    <section id="audio-controller">
-        <img id="playButton" src="images/play-button.svg" alt="Play Button">
-        <img id="pauseButton" src="images/pause-button.svg" alt="Pause Button">
-        <img id="restartButton" src="images/reset-button.svg" alt="Restart Button">
+    <div class="main-container">
+    <div class="drop-box-container grid-con">
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box1"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box2"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box3"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box4"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box5"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box6"></div>
+    </div>
+</div>
+
+
+    <section id="studio-container">
+        <div class="music-instruments grid-con grid-music-instrument">
+            <img src="images/electric_guitar.svg" id="bassGuitarImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Bass Guitar">
+            <img src="images/piano.svg" id="drumsImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Drums">
+            <img src="images/drums.svg" id="electricGuitarImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Electric Guitar">
+            <img src="images/synth.svg" id="micImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Microphone">
+            <img src="images/mic.svg" id="pianoImg" class="instrument-image l-col-span-2 m-col-span-4 col-span-2" alt="Piano">
+            <img src="images/bass_guitar.svg" id="synthImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Synthesizer">
+        </div>
     </section>
+
+    <div id="audio-list">
+        <audio id="audio1" src="audio/electricguitar.mp3" controls></audio>
+        <audio id="audio2" src="audio/piano.mp3" controls></audio>
+        <audio id="audio3" src="audio/drums.mp3" controls></audio>
+        <audio id="audio4" src="audio/synth.mp3" controls></audio>
+        <audio id="audio5" src="audio/mic.mp3" controls></audio>
+        <audio id="audio6" src="audio/bassguitar.mp3" controls></audio>
+    </div>
+
+    <section id="audio-controller" class="grid-con">
+        <img class="l-col-4"id="playButton" src="images/play-button.svg" alt="Play Button">
+        <img class="l-col-4" id="pauseButton" src="images/pause-button.svg" alt="Pause Button">
+        <img class="l-col-4" id="restartButton" src="images/reset-button.svg" alt="Restart Button">
+    </section>
+    
+    <div class="moving-icons grid-con">
+        <img class="music-move l-col-span-6" id="musicNote1" src="images/music1.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote2" src="images/music2.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote3"src="images/music3.svg" alt="">
+        <img  class="music-move l-col-span-6"id="musicNote4"  src="images/music4.svg" alt="">
+
+        <img class="music-move l-col-span-6" id="musicNote5" src="images/music1.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote6" src="images/music2.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote7"src="images/music3.svg" alt="">
+        <img  class="music-move l-col-span-6"id="musicNote8"  src="images/music4.svg" alt="">
+
+    </div>
+    <div class="fadeText" id="text-fade-in">
+        <h2>Enjoy And Get Ready To Feel The Beat.</h2>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
