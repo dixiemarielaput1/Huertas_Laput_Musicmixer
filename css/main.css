@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+
+.caveat {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 html {
     box-sizing: border-box;
 }
@@ -8,135 +17,263 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    margin-top: 70px;
-    border: 0;
-    background-image: url(/images/rec-room-bg.png);
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position-y: 50px;
-    color: #FFF;
-    font-family: 'Luckiest Guy', sans-serif;
-    font-size: 16px;
-}
-
-.drop-box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    justify-content: center;
-    align-items: center;
-    margin-top: 55px auto 0 auto;
-    padding: 5px;
-    max-height: 100px;
-    background-color: rgba(232, 232, 232, 0.9);
-    border-radius: 7px;
-}
-
-.drop-zone {
-    width: 80px;
-    height: 80px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid gray;
-    margin: 5px;
-    padding:10px 10px;
-    border-radius: 7px;
-}
-
-
-.music-instruments {
-    position: relative;
-    width: 100%; /* Ensure the container is full width */
-    height: 100%; /* Ensure the container is full height */
-    z-index: 1;
-}
-
-.music-instruments img {
-    width: 140px;
-    height: 140px;
-    padding: 10px;
-    
-}
 
 .drop-zone img{
-    height: 150px;
-    width: 150px;
+    width: 80px;
+    height: 80px;
 }
+
+
+body {
+
+    margin: 0;
+      height: 100vh;
+      background: linear-gradient(to right, #ffffff, #dad9d9);
+}
+
+
+.text-welcome h2{
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+
+
+font-family: 'Caveat';
+font-size: 45px;
+
+}
+
+.fadeText {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 5s ease, transform 0.5s ease;
+}
+
+.fadeText.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+ /*animation BG */
+
+ @keyframes blink {
+    0% {
+        background: radial-gradient(circle, #ff9999 10%, #ffcc99 60%),
+                    radial-gradient(circle, #66ccff 20%, transparent 80%),
+                    radial-gradient(circle, #ccff99 30%, transparent 70%),
+                    radial-gradient(circle, #ffccff 40%, transparent 60%),
+                    radial-gradient(circle, #ffcc66 50%, transparent 75%);
+    }
+    50% {
+        background: radial-gradient(circle, #ffccff 10%, #ff9966 60%),
+                    radial-gradient(circle, #99ff99 20%, transparent 80%),
+                    radial-gradient(circle, #ffcc99 30%, transparent 70%),
+                    radial-gradient(circle, #ff66cc 40%, transparent 60%),
+                    radial-gradient(circle, #66ffcc 50%, transparent 75%);
+    }
+    100% {
+        background: radial-gradient(circle, #ff9999 10%, #ffcc99 60%),
+                    radial-gradient(circle, #66ccff 20%, transparent 80%),
+                    radial-gradient(circle, #ccff99 30%, transparent 70%),
+                    radial-gradient(circle, #ffccff 40%, transparent 60%),
+                    radial-gradient(circle, #ffcc66 50%, transparent 75%);
+    }
+
+}
+  
+
+  .blinking {
+    animation: blink 1s infinite; 
+  }
+
+
+ /*animation Moving Icons*/
+
+  @keyframes slideIn-toTop {
+    from {
+      transform: translateY(-200px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+    }
+
+    
+  @keyframes slideIn-toBottom {
+    0% {
+        transform: translateY(-100px) scale(0.5) rotate(0deg); 
+        opacity: 0; 
+    }
+    25% {
+        transform: translateY(0) scale(1.2) rotate(30deg); 
+        opacity: 1; 
+    }
+    50% {
+        transform: translateY(140px) scale(1) rotate(0deg); 
+        opacity: 1; 
+    }
+    75% {
+        transform: translateY(100px) scale(1.2) rotate(-15deg); 
+        opacity: 0.8; 
+    }
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg); 
+        opacity: 1;
+    }
+    
+    }
+  
+  
+
+
+
+    .music-move {
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        width: 100px;
+        height:80px;
+    }
+
+    #musicNote1 {
+        position: absolute;
+        top: 21%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+  
+    }
+
+    #musicNote2 {
+        position: absolute;
+        top: 25%;
+        left: 13%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+   
+    }
+
+    #musicNote3 {
+        position: absolute;
+        top: 8%;
+        left: 19%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    #musicNote4 {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    #musicNote5 {
+
+        position: absolute;
+        top: 21%;
+        left: 84%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+   
+    }
+
+    #musicNote6 {
+        position: absolute;
+        top: 25%;
+        left: 74%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+   
+    }
+
+    #musicNote7 {
+        position: absolute;
+        top: 8%;
+        left: 69%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    #musicNote8 {
+        position: absolute;
+        top: 10%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+
+
+#musicNote1.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 1.7s ease-in-out infinite;
+
+}
+
+#musicNote2.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 1.2s ease-in-out infinite;
+
+}
+
+#musicNote3.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 2s ease-in-out infinite;
+
+}
+
+#musicNote4.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 2s ease-in-out infinite;
+
+}
+
+#musicNote5.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 1.7s ease-in-out infinite;
+
+}
+
+#musicNote6.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 1.2s ease-in-out infinite;
+
+}
+
+#musicNote7.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 2s ease-in-out infinite;
+
+}
+
+#musicNote8.animate {
+    opacity: 1; 
+    transform: scale(1); 
+    animation: slideIn-toBottom 2s ease-in-out infinite;
+   
+}
+
+
+
+
 
 #audio-list{
     display: none;
 }
 
 #headLine{
-    text-align: left;
-    margin-top: 80px;
-    margin-bottom: 40px;
-    color: black;
+    text-align: center;
+    height: 152px;
+    margin-bottom:20px;
+    padding: 35px 15px;
 
 }
 
-#audio-controller img{
-    width: 30px;
-    height: 30px;
-}
-
-#audio-controller{
-    display: flex;
-    position: absolute;
-    margin-top: 50px;
-    justify-content: center;
-    top: 59%;
-    left: 52.3%;
-}
-
-#studio-instruments {
-    display: flex;
-    height: 300px;
-    width: 600px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid red; /* For debugging */
-}
-
-/*instruments placement*/
-.instrument{
-    position: absolute;
-}
-
-#bassGuitar {
-    position: absolute;
-    top: 37%;
-    right: 33%;
-}
-
-#drums {
-    position: absolute;
-    top: 50%;
-    left: 6%;
-}
-
-#electricGuitar {
-    position: absolute;
-    top: 37%;
-    left: 31%;
-    z-index: 1;
-}
-
-#microphone {
-    position: absolute;
-    top: 27%;
-    left: 57%;
-}
-
-#piano {
-    position: absolute;
-    top: 37%;
-    left: 27%;
-}
-
-#synthesizer {
-    position: absolute;
-    top: 45%;
-    right: 1.5%;
-}

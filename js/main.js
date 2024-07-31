@@ -6,6 +6,8 @@ dropZones = document.querySelectorAll('.drop-zone'),
 playButton = document.querySelector('#playButton'),
 pauseButton = document.querySelector('#pauseButton'),
 restartButton = document.querySelector('#restartButton');
+const textFade = document.getElementById('text-fade-in');
+
 const audioElements = {
     bassGuitarImg: document.querySelector('#audio1'),
     drumsImg: document.querySelector('#audio2'),
@@ -15,6 +17,7 @@ const audioElements = {
     synthImg: document.querySelector('#audio6')
 };
 let draggedInstrument = null;
+let blinkID;
 
 function buttonPlay(){
     playAudio('bassGuitarImg');
@@ -28,7 +31,7 @@ function buttonPause(){
     pauseAudio('pianoImg');
     pauseAudio('synthImg');
 }
-// Function to play audio based on instrument ID
+
 function playAudio(instrumentId) {
     if (audioElements[instrumentId]) {
         const audio = audioElements[instrumentId];
@@ -44,7 +47,6 @@ function pauseAudio(instrumentId) {
         audio.pause();
 }}
 
-//Functions
 
 function handleStartDrag(){
     draggedInstrument = this;
@@ -54,6 +56,7 @@ function handleStartDrag(){
 function handleOver(e){
     e.preventDefault();
     console.log("Dragged Over");
+    
 }
 
 function handleDrop(e) {
@@ -61,12 +64,37 @@ function handleDrop(e) {
     if (!this.querySelector('img')) {
         this.appendChild(draggedInstrument);
         console.log(`Instrument '${draggedInstrument.alt}' dropped into '${this.id}'`);
-        
-        // Play audio corresponding to the dropped instrument
+
+            
         playAudio(draggedInstrument.id);
     } else {
         console.log('Zone is already occupied');
     }
+
+   
+        document.body.classList.add('blinking');
+        const fadingText = document.getElementById('text-fade-in');
+        fadingText.classList.add('show');
+
+        document.querySelectorAll('.music-move').forEach((element, index) => {
+    
+            element.classList.remove('animate');
+
+         
+            setTimeout(() => {
+                element.classList.add('animate');
+         
+            }, index * 100); 
+        }); 
+
+
+    }
+
+    function preventDrag(e) {
+        e.preventDefault();
+
+
+
     }
 
 //Event Listeners
@@ -77,4 +105,10 @@ dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
 playButton.addEventListener('click', buttonPlay);
 pauseButton.addEventListener('click', buttonPause);
 restartButton.addEventListener("click", function() {history.go(0);});
+
+
+playButton.addEventListener('dragstart', preventDrag);
+pauseButton.addEventListener('dragstart', preventDrag);
+restartButton.addEventListener('dragstart', preventDrag);
+
 

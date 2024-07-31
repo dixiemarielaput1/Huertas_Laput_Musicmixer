@@ -1,166 +1,87 @@
-html {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Music Mixer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/grid.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header id="headLine">
+        <h1>Music Mixer</h1>
+        <p>Tanya Huertas and Dixie Laput</p>
+    </header>
 
-    box-sizing: border-box; 
-  }
-  
-  *, *::before, *::after {
-    box-sizing: inherit; 
+    <div class="room-studio grid-con">
+        <h2 class="hidden">Rec Room BG</h2>
+        <img src="images/rec-room-bg.png" alt="" class="m-col-span-12 col-span-full">
+    </div>
 
-  box-sizing: border-box; 
-}
-
-*, *::before, *::after {
-  box-sizing: inherit; 
-}
-
-/* ---Mini CSS reset--- */
-
-
-.caveat {
-   font-family: "Caveat", cursive;
-   
-   font-weight: 400;
-   font-style: normal;
- }
-
-body, p, h1, h2, h3, h4, h5 {
-   margin: 0px; 
-   padding: 0px;
-   font-family: 'Caveat', Arial, Helvetica, sans-serif;
-
-}
-
-/* ---Utility Classes--- */
-
-.hidden {
-   display: none;
-}
-
-.box {
-   background-color: powderblue;
-   color: rgb(27, 27, 27);
-   border-radius: 5px;
-   padding: 20px;
-   text-align: center;
-   margin-top: 10px;
-   margin-bottom:10px;
- }
+    <div class="main-container">
+        <h2 class="hidden">Main Containter</h2>
+    <div class="drop-box-container grid-con">
+        <h2 class="hidden">Drop Box Container</h2>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box1"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box2"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box3"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box4"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box5"></div>
+        <div class="drop-zone l-col-span-2 m-col-span-2 col-span-2" id="box6"></div>
+    </div>
+</div>
 
 
+    <section id="studio-container">
+        <div class="music-instruments grid-con grid-music-instrument">
+            <h2 class="hidden">Instruments</h2>
+            <img src="images/electric_guitar.svg" id="bassGuitarImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Bass Guitar">
+            <img src="images/piano.svg" id="drumsImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Drums">
+            <img src="images/drums.svg" id="electricGuitarImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Electric Guitar">
+            <img src="images/synth.svg" id="micImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Microphone">
+            <img src="images/mic.svg" id="pianoImg" class="instrument-image l-col-span-2 m-col-span-4 col-span-2" alt="Piano">
+            <img src="images/bass_guitar.svg" id="synthImg" class="instrument-image l-col-span-2 m-col-span-2 col-span-2" alt="Synthesizer">
+        </div>
+    </section>
 
-/* ---Mobile Library Grid Styles--- */
+    <div id="audio-list">
+        <h2 class="hidden">Audio List</h2>
+        <audio id="audio1" src="audio/electricguitar.mp3" controls></audio>
+        <audio id="audio2" src="audio/piano.mp3" controls></audio>
+        <audio id="audio3" src="audio/drums.mp3" controls></audio>
+        <audio id="audio4" src="audio/synth.mp3" controls></audio>
+        <audio id="audio5" src="audio/mic.mp3" controls></audio>
+        <audio id="audio6" src="audio/bassguitar.mp3" controls></audio>
+    </div>
 
-.full-width-grid-con {
-   /* set this container as a grid, with 3 columns
-   the other grid will sit in the middle column, this allows for overlapping content */
-   display: grid; 
-	grid-template-columns: 1fr minmax(0, 1200px) 1fr;  
-}
-
- .grid-con { 
-   display: grid;
-   grid-template-columns: repeat(4, minmax(0, 1fr));
-   grid-column-gap: 30px;
-   max-width: 1200px;
-   margin: 0 auto;
-   padding-left: 15px;
-   padding-right: 15px;
-}
-
-/* descendant selector that re-writes the general grid_con class a bit,
-ONLY when it is inside the 'hero' container */
-#hero .grid-con {
-   /* entire 12-column grid sits in the middle column of the 3 column full-width grid */
-   /* this references the full-width grid */
-   grid-column: 2/3;
-   /* stay in the top row of full-width grid, so it overlaps the background */
-   grid-row: 1/1;
-   /* get rid of any margin from the original .grid-con class */
-   margin: 0;
-   justify-self: center;
-}
-
-
-.col-span-1	{grid-column: span 1 / span 1;}
-.col-span-2	{grid-column: span 2 / span 2;}
-.col-span-3	{grid-column: span 3 / span 3;}
-.col-span-4	{grid-column: span 4 / span 4;}
-.col-span-full {grid-column: 1 / -1;}
-
-.col-start-1	{grid-column-start: 1;}
-.col-start-2	{grid-column-start: 2;}
-.col-start-3	{grid-column-start: 3;}
-.col-start-4	{grid-column-start: 4;}
-
-.col-end-1	{grid-column-end: 1;}
-.col-end-2	{grid-column-end: 2;}
-.col-end-3	{grid-column-end: 3;}
-.col-end-4	{grid-column-end: 4;}
-.col-end-5	{grid-column-end: 5;}
-
-
-/*Mobile Grid*/
-@media screen and (min-width: 412px) { 
-
-   .grid-music-instrument{ 
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      grid-column-gap: 30px;
-      max-width: 300px;
-      margin: 0 auto;
-      padding-left: 15px;
-      padding-right: 15px;
-   }
-   
-
-   
-   .drop-zone {
-     
-      margin: 12px 0px;
-      width: 108px;
-      height: 80px;
-      background-color: rgb(255, 255, 255);
-      border: 2px solid gray;
-      border-radius:  5px;
-      
-  }
-
-  .grid-con {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr)); /* Ensure it applies to all screen sizes */
-}
-
-@media screen and (min-width: 1200px){
-  .grid-con {
-    grid-template-columns: repeat(13, minmax(0, 1fr));
-  }
-    .l-col-start-1 {grid-column-start: 1;}
-    .l-col-start-2 {grid-column-start: 2;}
-    .l-col-start-3 {grid-column-start: 3;}
-    .l-col-start-4 {grid-column-start: 4;}
-    .l-col-start-5 {grid-column-start: 5;}
-    .l-col-start-6 {grid-column-start: 6;}
-    .l-col-start-7 {grid-column-start: 7;}
-    .l-col-start-8 {grid-column-start: 8;}
-    .l-col-start-9 {grid-column-start: 9;}
-    .l-col-start-10 {grid-column-start: 10;}
-    .l-col-start-11 {grid-column-start: 11;}
-    .l-col-start-12 {grid-column-start: 12;}
+    <section id="audio-controller" class="grid-con">
+        <h2 class="hidden">Audio Controls</h2>
+        <img class="l-col-4" id="playButton" src="images/play-button.svg" alt="Play Button">
+        <img class="l-col-4" id="pauseButton" src="images/pause-button.svg" alt="Pause Button">
+        <img class="l-col-4" id="restartButton" src="images/reset-button.svg" alt="Restart Button">
+    </section>
     
-    .l-col-end-1 { grid-column-end: 1;}
-    .l-col-end-2 { grid-column-end: 2;}
-    .l-col-end-3 { grid-column-end: 3;}
-    .l-col-end-4 { grid-column-end: 4;}
-    .l-col-end-5 { grid-column-end: 5;}
-    .l-col-end-6 { grid-column-end: 6;}
-    .l-col-end-7 { grid-column-end: 7;}
-    .l-col-end-8 { grid-column-end: 8;}
-    .l-col-end-9 { grid-column-end: 9;}
-    .l-col-end-10 { grid-column-end: 10;}
-    .l-col-end-11 { grid-column-end: 11;}
-    .l-col-end-12 { grid-column-end: 12;}
-    .l-col-end-13 { grid-column-end: 13;}
+    <div class="moving-icons grid-con">
+        <h2 class="hidden">Animated Icons</h2>
+        <img class="music-move l-col-span-6" id="musicNote1" src="images/music1.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote2" src="images/music2.svg" alt="">
+        <img class="music-move l-col-span-6" id="musicNote3" src="images/music3.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote4"  src="images/music4.svg" alt="">
+
+        <img class="music-move l-col-span-6" id="musicNote5" src="images/music1.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote6" src="images/music2.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote7" src="images/music3.svg" alt="">
+        <img  class="music-move l-col-span-6" id="musicNote8"  src="images/music4.svg" alt="">
+
+    </div>
     
-    .show-element {display: grid;}  
-}
-}
+    <div class="fadeText" id="text-fade-in">
+        <h2 class="hidden">Footer Text</h2>
+        <h2>Enjoy And Get Ready To Feel The Beat.</h2>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
