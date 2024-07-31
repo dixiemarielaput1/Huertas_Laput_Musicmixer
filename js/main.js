@@ -89,6 +89,22 @@ function handleDrop(e) {
 
     
     }
+<<<<<<< Updated upstream
+=======
+
+    playButton.addEventListener('dragstart', preventDrag);
+pauseButton.addEventListener('dragstart', preventDrag);
+restartButton.addEventListener('dragstart', preventDrag);
+
+playButton.addEventListener('dragstart', preventDrag);
+pauseButton.addEventListener('dragstart', preventDrag);
+restartButton.addEventListener('dragstart', preventDrag);
+
+
+function preventDrag(e) {
+        e.preventDefault();
+}
+>>>>>>> Stashed changes
 
 //Event Listeners
 
