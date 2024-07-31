@@ -8,49 +8,6 @@ html {
     box-sizing: inherit;
 }
 
-<<<<<<< Updated upstream
-body {
-    margin: 0;
-    border: 0;
-    background-color: #333;
-    color: #FFF;
-    font-family: 'Luckiest Guy', sans-serif;
-    font-size: 16px;
-}
-
-.drop-box-container {
-    display: flex;
-    
-    justify-content: center; /* Adjust spacing between items */
-    margin: 20px 0; /* Added margin to the container */
-}
-
-.drop-zone {
-    width: 180px;
-    height: 180px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid gray;
-    margin: 5px; /* Adjusted margin to make items closer */
-    padding:10px 10px;
-}
-
-
-.music-instruments {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure .music-instruments appear above the background */
-}
-
-.music-instruments img {
-    width: 150px;
-    height: 150px;
-    padding: 10px;
-    
-}
-=======
->>>>>>> Stashed changes
 
 .drop-zone img{
     width: 80px;
@@ -301,27 +258,9 @@ font-size: 45px;
 
 #headLine{
     text-align: center;
-<<<<<<< Updated upstream
-    margin-top: 80px;
-    margin-bottom: 40px;
-
-}
-
-#audio-controller img{
-    width: 90px;
-    height: 90px;
-}
-
-#audio-controller{
-    display: flex;
-    margin-top: 280px;
-    justify-content: center;
-}
-=======
     height: 152px;
     margin-bottom:20px;
     padding: 35px 15px;
 
 }
 
->>>>>>> Stashed changes
