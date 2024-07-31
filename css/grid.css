@@ -18,6 +18,7 @@ html {
 
 /* ---Mini CSS reset--- */
 
+
 .caveat {
    font-family: "Caveat", cursive;
    font-optical-sizing: auto;
@@ -29,6 +30,11 @@ body, p, h1, h2, h3, h4, h5 {
    margin: 0px; 
    padding: 0px;
    font-family: 'Caveat', Arial, Helvetica, sans-serif;
+
+body, p, h1, h2, h3, h4, h5 {
+   margin: 0px; 
+   padding: 0px;
+
 }
 
 /* ---Utility Classes--- */
