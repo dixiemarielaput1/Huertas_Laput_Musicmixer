@@ -87,7 +87,14 @@ function handleDrop(e) {
             }, index * 100); 
         }); 
 
-    
+
+    }
+
+    function preventDrag(e) {
+        e.preventDefault();
+
+
+
     }
 <<<<<<< Updated upstream
 =======
@@ -114,4 +121,10 @@ dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
 playButton.addEventListener('click', buttonPlay);
 pauseButton.addEventListener('click', buttonPause);
 restartButton.addEventListener("click", function() {history.go(0);});
+
+
+playButton.addEventListener('dragstart', preventDrag);
+pauseButton.addEventListener('dragstart', preventDrag);
+restartButton.addEventListener('dragstart', preventDrag);
+
 
