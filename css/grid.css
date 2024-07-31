@@ -1,9 +1,128 @@
 html {
+
     box-sizing: border-box; 
   }
   
   *, *::before, *::after {
     box-sizing: inherit; 
+
+  box-sizing: border-box; 
+}
+
+*, *::before, *::after {
+  box-sizing: inherit; 
+}
+
+/* ---Mini CSS reset--- */
+
+
+.caveat {
+   font-family: "Caveat", cursive;
+   
+   font-weight: 400;
+   font-style: normal;
+ }
+
+body, p, h1, h2, h3, h4, h5 {
+   margin: 0px; 
+   padding: 0px;
+   font-family: 'Caveat', Arial, Helvetica, sans-serif;
+
+}
+
+/* ---Utility Classes--- */
+
+.hidden {
+   display: none;
+}
+
+.box {
+   background-color: powderblue;
+   color: rgb(27, 27, 27);
+   border-radius: 5px;
+   padding: 20px;
+   text-align: center;
+   margin-top: 10px;
+   margin-bottom:10px;
+ }
+
+
+
+/* ---Mobile Library Grid Styles--- */
+
+.full-width-grid-con {
+   /* set this container as a grid, with 3 columns
+   the other grid will sit in the middle column, this allows for overlapping content */
+   display: grid; 
+	grid-template-columns: 1fr minmax(0, 1200px) 1fr;  
+}
+
+ .grid-con { 
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   grid-column-gap: 30px;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+/* descendant selector that re-writes the general grid_con class a bit,
+ONLY when it is inside the 'hero' container */
+#hero .grid-con {
+   /* entire 12-column grid sits in the middle column of the 3 column full-width grid */
+   /* this references the full-width grid */
+   grid-column: 2/3;
+   /* stay in the top row of full-width grid, so it overlaps the background */
+   grid-row: 1/1;
+   /* get rid of any margin from the original .grid-con class */
+   margin: 0;
+   justify-self: center;
+}
+
+
+.col-span-1	{grid-column: span 1 / span 1;}
+.col-span-2	{grid-column: span 2 / span 2;}
+.col-span-3	{grid-column: span 3 / span 3;}
+.col-span-4	{grid-column: span 4 / span 4;}
+.col-span-full {grid-column: 1 / -1;}
+
+.col-start-1	{grid-column-start: 1;}
+.col-start-2	{grid-column-start: 2;}
+.col-start-3	{grid-column-start: 3;}
+.col-start-4	{grid-column-start: 4;}
+
+.col-end-1	{grid-column-end: 1;}
+.col-end-2	{grid-column-end: 2;}
+.col-end-3	{grid-column-end: 3;}
+.col-end-4	{grid-column-end: 4;}
+.col-end-5	{grid-column-end: 5;}
+
+
+/*Mobile Grid*/
+@media screen and (min-width: 412px) { 
+
+   .grid-music-instrument{ 
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-column-gap: 30px;
+      max-width: 300px;
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+   }
+   
+
+   
+   .drop-zone {
+     
+      margin: 12px 0px;
+      width: 108px;
+      height: 80px;
+      background-color: rgb(255, 255, 255);
+      border: 2px solid gray;
+      border-radius:  5px;
+      
   }
 
   .grid-con {
@@ -43,4 +162,5 @@ html {
     .l-col-end-13 { grid-column-end: 13;}
     
     .show-element {display: grid;}  
+}
 }
